@@ -1,15 +1,19 @@
-import React, { Component } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+import Maintenance from "./components/maintenance-component";
 import AddTutorial from "./components/add-tutorial.component";
 import Tutorial from "./components/tutorial.component";
 import TutorialsList from "./components/tutorials-list.component";
 
-class App extends Component {
-  render() {
-    return (
+export default function App() {
+  const maintenance = true;
+  return (
+    <>
+      {maintenance ? (
+        <Maintenance />
+      ) : (
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/tutorials"} className="navbar-brand">
@@ -37,9 +41,8 @@ class App extends Component {
             <Route path="/tutorials/:id" element={<Tutorial/>} />
           </Routes>
         </div>
-      </div>
-    );
-  }
+      </div>    
+    )}
+    </>
+  )
 }
-
-export default App;
