@@ -2,7 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import Maintenance from "./Maintenance";
+import Maintenance from "./components/maintenance-component";
 import AddTutorial from "./components/add-tutorial.component";
 import Tutorial from "./components/tutorial.component";
 import TutorialsList from "./components/tutorials-list.component";
