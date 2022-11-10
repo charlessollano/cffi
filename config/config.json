@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Fdc@101082#",
+    "database": "db_cffi_dev",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "Fdc@101082#",
+    "database": "db_cffi_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "Fdc@101082#",
+    "database": "db_cffi_prod",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
