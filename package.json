@@ -4,8 +4,8 @@
   "private": true,
   "description": "CFFI Admin Dashboard",
   "scripts": {
-    "start": "react-scripts start DISABLE_ESLINT_PLUGIN=true",
-    "build": "react-scripts build DISABLE_ESLINT_PLUGIN=true",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install --omit=optional --verbose && npm start",
