@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.0
+* CFFI Admin Dashboard powered by Argon Dashboard 2 MUI - v1.0.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -54,7 +54,7 @@ function SidenavFooter() {
       <ArgonBox display="flex" flexDirection="column">
         <ArgonButton
           component={Link}
-          href="https://cffi.org"
+          href={`${process.env.REACT_APP_BASE_URL}`}
           target="_blank"
           rel="noreferrer"
           color="dark"
@@ -66,7 +66,7 @@ function SidenavFooter() {
         </ArgonButton>
         <ArgonButton
           component={Link}
-          href="https://cffi.org"
+          href={`${process.env.REACT_APP_BASE_URL}`}
           target="_blank"
           rel="noreferrer"
           color="info"

@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.0
+* CFFI Admin Dashboard powered by Argon Dashboard 2 MUI - v1.0.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -17,7 +17,6 @@ Coded by www.creative-tim.com
 import PropTypes from "prop-types";
 
 // @mui material components
-import Collapse from "@mui/material/Collapse";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -32,7 +31,7 @@ import { item, itemIcon, itemText, itemIconBox } from "examples/Sidenav/styles/s
 // Argon Dashboard 2 MUI context
 import { useArgonController } from "context";
 
-function SidenavItem({ icon, name, active, open, ...rest }) {
+function SidenavItem({ icon, name, active, ...rest }) {
   const [controller] = useArgonController();
   const { miniSidenav, darkSidenav, sidenavColor } = controller;
 
@@ -66,6 +65,7 @@ SidenavItem.defaultProps = {
   color: "info",
   active: false,
   open: false,
+  noCollapse: true
 };
 
 // Typechecking props for the SidenavItem
@@ -75,6 +75,7 @@ SidenavItem.propTypes = {
   name: PropTypes.string.isRequired,
   active: PropTypes.bool,
   open: PropTypes.bool,
+  noCollapse: PropTypes.bool
 };
 
 export default SidenavItem;
