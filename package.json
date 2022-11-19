@@ -1,6 +1,6 @@
 {
   "name": "cffi-admin-dashboard",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "description": "CFFI Admin Dashboard",
   "homepage": "https://demos.creative-tim.com/argon-dashboard-material-ui/",
@@ -22,6 +22,9 @@
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.3.0",
     "@testing-library/user-event": "14.2.0",
+    "@sequelize/core": "^7.0.0-alpha.10",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
     "chart.js": "3.4.1",
     "chroma-js": "2.4.2",
     "prop-types": "15.8.1",
