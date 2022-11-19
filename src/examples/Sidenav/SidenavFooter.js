@@ -54,7 +54,7 @@ function SidenavFooter() {
       <ArgonBox display="flex" flexDirection="column">
         <ArgonButton
           component={Link}
-          href="https://cffi.org"
+          href={`${process.env.BASE_URL}`}
           target="_blank"
           rel="noreferrer"
           color="dark"
