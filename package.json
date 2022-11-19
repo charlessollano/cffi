@@ -12,7 +12,7 @@
     "url": "git+https://github.com/cffi-org/cffi-admin-dashboard.git"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start DISABLE_ESLINT_PLUGIN=true",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
