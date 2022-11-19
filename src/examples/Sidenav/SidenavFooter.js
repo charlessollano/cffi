@@ -54,7 +54,7 @@ function SidenavFooter() {
       <ArgonBox display="flex" flexDirection="column">
         <ArgonButton
           component={Link}
-          href={`${process.env.BASE_URL}`}
+          href={`${process.env.REACT_APP_BASE_URL}`}
           target="_blank"
           rel="noreferrer"
           color="dark"
@@ -66,7 +66,7 @@ function SidenavFooter() {
         </ArgonButton>
         <ArgonButton
           component={Link}
-          href={`${process.env.BASE_URL}`}
+          href={`${process.env.REACT_APP_BASE_URL}`}
           target="_blank"
           rel="noreferrer"
           color="info"
