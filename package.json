@@ -23,12 +23,6 @@
     "node": "14 || 15 || 16",
     "npm": ">=6"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -61,7 +55,6 @@
     "@testing-library/user-event": "14.2.0",
     "chart.js": "3.4.1",
     "chroma-js": "2.4.2",
-    "eslint-config-react-app": "^7.0.1",
     "prop-types": "15.8.1",
     "react": "18.1.0",
     "react-chartjs-2": "3.0.4",
