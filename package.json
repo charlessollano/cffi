@@ -11,6 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/creativetimofficial/argon-dashboard-material-ui.git"
   },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install --omit=optional --legacy-peer-deps && npm start",
+    "install:peer-deps": "npm install --omit=optional --legacy-peer-deps"
+  },
   "dependencies": {
     "@emotion/cache": "11.7.1",
     "@emotion/react": "11.9.0",
@@ -36,18 +44,10 @@
     "react-perfect-scrollbar": "1.5.8",
     "react-router-dom": "6.3.0",
     "react-scripts": "^5.0.1",
-    "stylis": "4.1.1",
+    "stylis": "^4.0.2",
     "stylis-plugin-rtl": "2.0.2",
     "swiper": "^6.0.2",
     "web-vitals": "2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install --omit=optional --legacy-peer-deps && npm start",
-    "install:peer-deps": "npm install --omit=optional --legacy-peer-deps"
   },
   "eslintConfig": {
     "extends": [
