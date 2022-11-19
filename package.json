@@ -46,9 +46,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "install:yarn": "rm -rf node_modules/ && rm -rf yarn.lock && yarn && yarn start",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install --legacy-peer-deps && npm start",
-    "install:peer-deps": "npm install --legacy-peer-deps"
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install --no-optional --legacy-peer-deps && npm start",
+    "install:peer-deps": "npm install --no-optional --legacy-peer-deps"
   },
   "eslintConfig": {
     "extends": [
@@ -76,8 +75,5 @@
     "eslint-plugin-react": "7.30.0",
     "eslint-plugin-react-hooks": "4.5.0",
     "prettier": "2.6.2"
-  },
-  "optionalDependencies": {
-    "fsevents": "^2.3.2"
   }
 }
