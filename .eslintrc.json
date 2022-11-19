@@ -4,7 +4,6 @@
     "es2021": true
   },
   "extends": ["eslint:recommended", "prettier", "plugin:@typescript-eslint/recommended"],
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -12,7 +11,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react-hooks", "import", "prettier", "@typescript-eslint"],
+  "plugins": ["react-hooks", "import", "prettier"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/require-default-props": "off",
