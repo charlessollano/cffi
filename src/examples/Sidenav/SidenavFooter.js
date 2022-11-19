@@ -66,7 +66,7 @@ function SidenavFooter() {
         </ArgonButton>
         <ArgonButton
           component={Link}
-          href="https://cffi.org"
+          href={`${process.env.BASE_URL}`}
           target="_blank"
           rel="noreferrer"
           color="info"
