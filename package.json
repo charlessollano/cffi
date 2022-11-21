@@ -4,6 +4,13 @@
   "private": true,
   "description": "CFFI Admin Dashboard",
   "homepage": "https://cffi-ph.com",
+  "bugs": {
+    "url": "https://github.com/cffi-org/cffi-admin-dashboard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cffi-org/cffi-admin-dashboard.git"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
