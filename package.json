@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "description": "CFFI Admin Dashboard",
-  "homepage": "https://demos.creative-tim.com/argon-dashboard-material-ui/",
+  "homepage": "https://cffi-ph.com",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/argon-dashboard-material-ui/issues"
+    "url": "https://github.com/cffi-org/cffi-admin-dashboard/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/argon-dashboard-material-ui.git"
+    "url": "git+https://github.com/cffi-org/cffi-admin-dashboard.git"
   },
   "scripts": {
     "start": "react-scripts start",
