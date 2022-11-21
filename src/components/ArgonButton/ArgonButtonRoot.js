@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.0
+* CFFI Admin Dashboard powered by Argon Dashboard 2 MUI - v1.0.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -21,7 +21,7 @@ export default styled(Button)(({ theme, ownerState }) => {
   const { palette, functions, borders } = theme;
   const { color, variant, size, circular, iconOnly } = ownerState;
 
-  const { white, dark, text, transparent, gradients } = palette;
+  const { white, dark, transparent, gradients } = palette;
   const { boxShadow, linearGradient, pxToRem, rgba } = functions;
   const { borderRadius } = borders;
 

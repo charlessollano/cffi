@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.0
+* CFFI Admin Dashboard powered by Argon Dashboard 2 MUI - v1.0.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -25,7 +25,7 @@ import colors from "assets/theme-dark/base/colors";
 // Argon Dashboard 2 MUI Helper Functions
 import boxShadow from "assets/theme-dark/functions/boxShadow";
 
-const { black, white, info, tabs, dark, text } = colors;
+const { black, info, dark } = colors;
 
 const boxShadows = {
   xs: boxShadow([0, 2], [9, -5], black.main, 0.15),

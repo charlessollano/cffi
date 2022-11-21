@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.0
+* CFFI Admin Dashboard powered by Argon Dashboard 2 MUI - v1.0.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
