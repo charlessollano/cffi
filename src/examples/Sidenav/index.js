@@ -1,6 +1,6 @@
 /**
 =========================================================
-* CFFI Admin Dashboard powered by Argon Dashboard 2 MUI - v1.0.0
+* Argon Dashboard 2 MUI - v3.0.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -43,7 +43,6 @@ import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
 import { useArgonController, setMiniSidenav } from "context";
 
 function Sidenav({ brand, brandName, routes, ...rest }) {
-  let noCollapse = true;
   const [controller, dispatch] = useArgonController();
   const { miniSidenav, darkSidenav, layout } = controller;
   const location = useLocation();
@@ -82,7 +81,6 @@ function Sidenav({ brand, brandName, routes, ...rest }) {
               name={name}
               icon={icon}
               active={key === itemName}
-              noCollapse={noCollapse}
             />
           </Link>
         );
