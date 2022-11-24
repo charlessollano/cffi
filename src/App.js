@@ -54,6 +54,7 @@ import brandDark from "assets/images/logo-ct-dark.png";
 // Icon Fonts
 import "assets/css/nucleo-icons.css";
 import "assets/css/nucleo-svg.css";
+import Landing from "views-frontend/examples/Landing";
 
 export default function App() {
   const [controller, dispatch] = useArgonController();
@@ -94,7 +95,7 @@ export default function App() {
 
   // Setting the dir attribute for the body element
   useEffect(() => {
-    if(pathname === "/landing") return;
+    if(pathname === "/landing" || pathname === "/") return;
     document.body.setAttribute("dir", direction);
   }, [direction]);
 
@@ -140,17 +141,43 @@ export default function App() {
       </Icon>
     </ArgonBox>
   );
-
-  return direction === "rtl" ? (
-    <CacheProvider value={rtlCache}>
-      <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
+  console.log(pathname)
+  return pathname === "/landing" || pathname === "/" ? <Landing />
+    : (  
+    direction === "rtl" ? (
+      <CacheProvider value={rtlCache}>
+        <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
+          <CssBaseline />
+          {layout === "dashboard" && (
+            <>
+              <Sidenav
+                color={sidenavColor}
+                brand={darkSidenav || darkMode ? brand : brandDark}
+                brandName="CFFI Admin Dashboard"
+                routes={routes}
+                onMouseEnter={handleOnMouseEnter}
+                onMouseLeave={handleOnMouseLeave}
+              />
+              <Configurator />
+              {configsButton}
+            </>
+          )}
+          {layout === "vr" && <Configurator />}
+          <Routes>
+            {getRoutes(routes)}
+            <Route path="*" element={<Navigate to="/dashboard" />} />
+          </Routes>
+        </ThemeProvider>
+      </CacheProvider>
+    ) : (
+      <ThemeProvider theme={darkMode ? themeDark : theme}>
         <CssBaseline />
-        {layout === "dashboard" && pathname !== "/landing" && (
+        {layout === "dashboard" && (
           <>
             <Sidenav
               color={sidenavColor}
               brand={darkSidenav || darkMode ? brand : brandDark}
-              brandName="Argon Dashboard 2 PRO"
+              brandName="CFFI Admin Dashboard"
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
@@ -159,35 +186,12 @@ export default function App() {
             {configsButton}
           </>
         )}
-        {layout === "vr" && pathname !== "/landing" &&<Configurator />}
+        {layout === "vr" && <Configurator />}
         <Routes>
           {getRoutes(routes)}
           <Route path="*" element={<Navigate to="/dashboard" />} />
         </Routes>
       </ThemeProvider>
-    </CacheProvider>
-  ) : (
-    <ThemeProvider theme={darkMode ? themeDark : theme}>
-      <CssBaseline />
-      {layout === "dashboard" && pathname !== "/landing" &&(
-        <>
-          <Sidenav
-            color={sidenavColor}
-            brand={darkSidenav || darkMode ? brand : brandDark}
-            brandName="Argon Dashboard 2 PRO"
-            routes={routes}
-            onMouseEnter={handleOnMouseEnter}
-            onMouseLeave={handleOnMouseLeave}
-          />
-          <Configurator />
-          {configsButton}
-        </>
-      )}
-      {layout === "vr" && pathname !== "/landing" &&<Configurator />}
-      <Routes>
-        {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/dashboard" />} />
-      </Routes>
-    </ThemeProvider>
+    )
   );
 }
