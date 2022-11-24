@@ -64,8 +64,7 @@ function SidenavItem({ icon, name, active, ...rest }) {
 SidenavItem.defaultProps = {
   color: "info",
   active: false,
-  open: false,
-  noCollapse: true
+  open: false
 };
 
 // Typechecking props for the SidenavItem
@@ -74,8 +73,7 @@ SidenavItem.propTypes = {
   icon: PropTypes.node.isRequired,
   name: PropTypes.string.isRequired,
   active: PropTypes.bool,
-  open: PropTypes.bool,
-  noCollapse: PropTypes.bool
+  open: PropTypes.bool
 };
 
 export default SidenavItem;

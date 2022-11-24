@@ -1,6 +1,6 @@
 /**
 =========================================================
-* CFFI Admin Dashboard powered by Argon Dashboard 2 MUI - v1.0.0
+* Argon Dashboard 2 MUI - v3.0.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -62,7 +62,7 @@ export default function App() {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const [rtlCache, setRtlCache] = useState(null);
   const { pathname } = useLocation();
-
+  
   // Cache for the rtl
   useMemo(() => {
     const cacheRtl = createCache({
@@ -94,6 +94,7 @@ export default function App() {
 
   // Setting the dir attribute for the body element
   useEffect(() => {
+    if(pathname === "/landing") return;
     document.body.setAttribute("dir", direction);
   }, [direction]);
 
@@ -144,12 +145,12 @@ export default function App() {
     <CacheProvider value={rtlCache}>
       <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
         <CssBaseline />
-        {layout === "dashboard" && (
+        {layout === "dashboard" && pathname !== "/landing" && (
           <>
             <Sidenav
               color={sidenavColor}
               brand={darkSidenav || darkMode ? brand : brandDark}
-              brandName="CFFI Admin Dashboard"
+              brandName="Argon Dashboard 2 PRO"
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
@@ -158,7 +159,7 @@ export default function App() {
             {configsButton}
           </>
         )}
-        {layout === "vr" && <Configurator />}
+        {layout === "vr" && pathname !== "/landing" &&<Configurator />}
         <Routes>
           {getRoutes(routes)}
           <Route path="*" element={<Navigate to="/dashboard" />} />
@@ -168,12 +169,12 @@ export default function App() {
   ) : (
     <ThemeProvider theme={darkMode ? themeDark : theme}>
       <CssBaseline />
-      {layout === "dashboard" && (
+      {layout === "dashboard" && pathname !== "/landing" &&(
         <>
           <Sidenav
             color={sidenavColor}
             brand={darkSidenav || darkMode ? brand : brandDark}
-            brandName="CFFI Admin Dashboard"
+            brandName="Argon Dashboard 2 PRO"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
@@ -182,7 +183,7 @@ export default function App() {
           {configsButton}
         </>
       )}
-      {layout === "vr" && <Configurator />}
+      {layout === "vr" && pathname !== "/landing" &&<Configurator />}
       <Routes>
         {getRoutes(routes)}
         <Route path="*" element={<Navigate to="/dashboard" />} />
