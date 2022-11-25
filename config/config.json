@@ -4,20 +4,20 @@
     "password": "fdc101082",
     "database": "db_cffi_dev",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mariadb"
   },
   "test": {
     "username": "frank",
     "password": "fdc101082",
     "database": "db_cffi_test",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mariadb"
   },
   "production": {
     "username": "frank",
     "password": "fdc101082",
     "database": "db_cffi_prod",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mariadb"
   }
 }
