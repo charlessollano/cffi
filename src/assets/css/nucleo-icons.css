@@ -593,5 +593,9 @@ License - nucleoapp.com/license/
   content: "\ea65";
 }
 
+.icon-home::before {
+  content: "\e901";
+}
+
 
 /* all icon font classes list here */
