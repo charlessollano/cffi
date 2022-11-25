@@ -79,7 +79,7 @@ class Landing extends React.Component {
                   <Row>
                     <Col lg="6">
                       <h1 className="display-3 text-white">
-                        Why is CFFI{" "}
+                        Why CFFI?{" "}
                         <span>we make sure that our government mandated goods and services properly given</span>
                       </h1>
                       <p className="lead text-white">
