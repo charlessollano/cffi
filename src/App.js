@@ -55,6 +55,7 @@ import brandDark from "assets/images/logo-ct-dark.png";
 import "assets/css/nucleo-icons.css";
 import "assets/css/nucleo-svg.css";
 import Landing from "views-frontend/examples/Landing";
+import Register from "views-frontend/examples/Register";
 
 export default function App() {
   const [controller, dispatch] = useArgonController();
@@ -141,12 +142,38 @@ export default function App() {
       </Icon>
     </ArgonBox>
   );
-  console.log(pathname)
-  return pathname === "/landing" || pathname === "/" ? <Landing />
+  
+  return pathname === "/landing" ? <Landing />
+  : (
+    pathname === "/register-page" || pathname === "/" ? <Register />
     : (  
-    direction === "rtl" ? (
-      <CacheProvider value={rtlCache}>
-        <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
+      direction === "rtl" ? (
+        <CacheProvider value={rtlCache}>
+          <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
+            <CssBaseline />
+            {layout === "dashboard" && (
+              <>
+                <Sidenav
+                  color={sidenavColor}
+                  brand={darkSidenav || darkMode ? brand : brandDark}
+                  brandName="CFFI Admin Dashboard"
+                  routes={routes}
+                  onMouseEnter={handleOnMouseEnter}
+                  onMouseLeave={handleOnMouseLeave}
+                />
+                <Configurator />
+                {configsButton}
+              </>
+            )}
+            {layout === "vr" && <Configurator />}
+            <Routes>
+              {getRoutes(routes)}
+              <Route path="*" element={<Navigate to="/dashboard" />} />
+            </Routes>
+          </ThemeProvider>
+        </CacheProvider>
+      ) : (
+        <ThemeProvider theme={darkMode ? themeDark : theme}>
           <CssBaseline />
           {layout === "dashboard" && (
             <>
@@ -168,30 +195,7 @@ export default function App() {
             <Route path="*" element={<Navigate to="/dashboard" />} />
           </Routes>
         </ThemeProvider>
-      </CacheProvider>
-    ) : (
-      <ThemeProvider theme={darkMode ? themeDark : theme}>
-        <CssBaseline />
-        {layout === "dashboard" && (
-          <>
-            <Sidenav
-              color={sidenavColor}
-              brand={darkSidenav || darkMode ? brand : brandDark}
-              brandName="CFFI Admin Dashboard"
-              routes={routes}
-              onMouseEnter={handleOnMouseEnter}
-              onMouseLeave={handleOnMouseLeave}
-            />
-            <Configurator />
-            {configsButton}
-          </>
-        )}
-        {layout === "vr" && <Configurator />}
-        <Routes>
-          {getRoutes(routes)}
-          <Route path="*" element={<Navigate to="/dashboard" />} />
-        </Routes>
-      </ThemeProvider>
+      )
     )
   );
 }

@@ -17,11 +17,14 @@
 */
 import React from "react";
 
+import "../../assets/vendor/nucleo/css/nucleo.css";
+import "../../assets/vendor/font-awesome/css/font-awesome.min.css";
+import "../../assets/scss/argon-design-system-react.scss?v1.1.0";
+
 // reactstrap components
 import {
   Button,
   Card,
-  CardHeader,
   CardBody,
   FormGroup,
   Form,
@@ -31,12 +34,113 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
+  Col,
+  CardTitle,
+  ListGroup,
+  ListGroupItem,
+  CardHeader
 } from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
+
+const Beneficiaries = (beneficiary) => {
+  return (<ListGroupItem>
+            <Card
+              color="primary"
+              outline
+              style={{flex: 1}}
+            >
+              <CardBody>
+                <CardTitle>
+                  {beneficiary}
+                </CardTitle>
+                <FormGroup>
+                  <InputGroup className="input-group-alternative mb-3">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="ni ni-circle-08" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Fist Name" type="text" />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup className="input-group-alternative mb-3">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="ni ni-active-40" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Middle Name" type="text" />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup className="input-group-alternative mb-3">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="ni ni-hat-3" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Last Name" type="text" />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup className="input-group-alternative mb-3">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="ni ni-world-2" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Full Address" type="text" />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup className="input-group-alternative mb-3">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="ni ni-calendar-grid-58" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Birthdate" type="text" />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup className="input-group-alternative mb-3">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="ni ni-satisfied" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Gender" type="text" />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup className="input-group-alternative mb-3">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="ni ni-mobile-button" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Contact Number" type="text" />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup className="input-group-alternative mb-3">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="ni ni-email-83" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Email" type="email" />
+                  </InputGroup>
+                </FormGroup>
+              </CardBody>
+            </Card>
+          </ListGroupItem>
+          );
+}
 
 class Register extends React.Component {
   componentDidMount() {
@@ -44,6 +148,16 @@ class Register extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
+
+  setBeneficiaries(cnt){
+    let cntbfs = [];
+    for (let i = 0; i < cnt; i++) {      
+      cntbfs[i] = Beneficiaries(`Beneficiary ${i+1}`);
+    }
+
+    return cntbfs;
+  }
+
   render() {
     return (
       <>
@@ -62,130 +176,163 @@ class Register extends React.Component {
             </div>
             <Container className="pt-lg-7">
               <Row className="justify-content-center">
-                <Col lg="5">
+                <Col lg="12">
                   <Card className="bg-secondary shadow border-0">
-                    <CardHeader className="bg-white pb-5">
-                      <div className="text-muted text-center mb-3">
-                        <small>Sign up with</small>
-                      </div>
-                      <div className="text-center">
-                        <Button
-                          className="btn-neutral btn-icon mr-4"
-                          color="default"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <img
-                              alt="..."
-                              src={
-                                require("assets/img/icons/common/github.svg")
-                                  .default
-                              }
-                            />
-                          </span>
-                          <span className="btn-inner--text">Github</span>
-                        </Button>
-                        <Button
-                          className="btn-neutral btn-icon ml-1"
-                          color="default"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <img
-                              alt="..."
-                              src={
-                                require("assets/img/icons/common/google.svg")
-                                  .default
-                              }
-                            />
-                          </span>
-                          <span className="btn-inner--text">Google</span>
-                        </Button>
-                      </div>
-                    </CardHeader>
                     <CardBody className="px-lg-5 py-lg-5">
                       <div className="text-center text-muted mb-4">
-                        <small>Or sign up with credentials</small>
+                        <h5>Please provide valid necessary details for Registration</h5>
                       </div>
                       <Form role="form">
-                        <FormGroup>
-                          <InputGroup className="input-group-alternative mb-3">
-                            <InputGroupAddon addonType="prepend">
-                              <InputGroupText>
-                                <i className="ni ni-hat-3" />
-                              </InputGroupText>
-                            </InputGroupAddon>
-                            <Input placeholder="Name" type="text" />
-                          </InputGroup>
-                        </FormGroup>
-                        <FormGroup>
-                          <InputGroup className="input-group-alternative mb-3">
-                            <InputGroupAddon addonType="prepend">
-                              <InputGroupText>
-                                <i className="ni ni-email-83" />
-                              </InputGroupText>
-                            </InputGroupAddon>
-                            <Input placeholder="Email" type="email" />
-                          </InputGroup>
-                        </FormGroup>
-                        <FormGroup>
-                          <InputGroup className="input-group-alternative">
-                            <InputGroupAddon addonType="prepend">
-                              <InputGroupText>
-                                <i className="ni ni-lock-circle-open" />
-                              </InputGroupText>
-                            </InputGroupAddon>
-                            <Input
-                              placeholder="Password"
-                              type="password"
-                              autoComplete="off"
+                        <Row>
+                        <Col>
+                          <FormGroup>
+                            <InputGroup className="input-group-alternative mb-3">
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="ni ni-circle-08" />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input placeholder="Fist Name" type="text" />
+                            </InputGroup>
+                          </FormGroup>
+                          <FormGroup>
+                            <InputGroup className="input-group-alternative mb-3">
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="ni ni-active-40" />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input placeholder="Middle Name" type="text" />
+                            </InputGroup>
+                          </FormGroup>
+                          <FormGroup>
+                            <InputGroup className="input-group-alternative mb-3">
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="ni ni-hat-3" />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input placeholder="Last Name" type="text" />
+                            </InputGroup>
+                          </FormGroup>
+                          <FormGroup>
+                            <InputGroup className="input-group-alternative mb-3">
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="ni ni-world-2" />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input placeholder="Full Address" type="text" />
+                            </InputGroup>
+                          </FormGroup>
+                          <FormGroup>
+                            <InputGroup className="input-group-alternative mb-3">
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="ni ni-calendar-grid-58" />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input placeholder="Birthdate" type="text" />
+                            </InputGroup>
+                          </FormGroup>
+                          <FormGroup>
+                            <InputGroup className="input-group-alternative mb-3">
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="ni ni-satisfied" />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input placeholder="Gender" type="text" />
+                            </InputGroup>
+                          </FormGroup>
+                          <FormGroup>
+                            <InputGroup className="input-group-alternative mb-3">
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="ni ni-badge" />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input placeholder="Position" type="text" />
+                            </InputGroup>
+                          </FormGroup>
+                        </Col>
+                        <Col>
+                          <FormGroup>
+                            <InputGroup className="input-group-alternative mb-3">
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="ni ni-mobile-button" />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input placeholder="Contact Number" type="text" />
+                            </InputGroup>
+                          </FormGroup>
+                          <FormGroup>
+                            <InputGroup className="input-group-alternative mb-3">
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="ni ni-email-83" />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input placeholder="Email" type="email" />
+                            </InputGroup>
+                          </FormGroup>
+                          <Card
+                            style={{
+                              height: '18rem',
+                              overflow: 'auto'
+                            }}
+                          > 
+                            <CardHeader>
+                              Provide the list of your qualified beneficiaries
+                            </CardHeader>
+                            <ListGroup flush>
+                            {
+                              this.setBeneficiaries(3).map(item => item)
+                            }         
+                            </ListGroup>
+                          </Card>        
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>                          
+                        </Col>
+                      </Row>
+                      <Row className="my-4">
+                        <Col xs="12">
+                          <div className="custom-control custom-control-alternative custom-checkbox">
+                            <input
+                              className="custom-control-input"
+                              id="customCheckRegister"
+                              type="checkbox"
+                              defaultChecked
                             />
-                          </InputGroup>
-                        </FormGroup>
-                        <div className="text-muted font-italic">
-                          <small>
-                            password strength:{" "}
-                            <span className="text-success font-weight-700">
-                              strong
-                            </span>
-                          </small>
-                        </div>
-                        <Row className="my-4">
-                          <Col xs="12">
-                            <div className="custom-control custom-control-alternative custom-checkbox">
-                              <input
-                                className="custom-control-input"
-                                id="customCheckRegister"
-                                type="checkbox"
-                              />
-                              <label
-                                className="custom-control-label"
-                                htmlFor="customCheckRegister"
-                              >
-                                <span>
-                                  I agree with the{" "}
-                                  <a
-                                    href="#pablo"
-                                    onClick={(e) => e.preventDefault()}
-                                  >
-                                    Privacy Policy
-                                  </a>
-                                </span>
-                              </label>
-                            </div>
-                          </Col>
-                        </Row>
-                        <div className="text-center">
-                          <Button
-                            className="mt-4"
-                            color="primary"
-                            type="button"
-                          >
-                            Create account
-                          </Button>
-                        </div>
+                            <label
+                              className="custom-control-label"
+                              htmlFor="customCheckRegister"
+                            >
+                              <span>
+                                I agree with the{" "}
+                                <a
+                                  href="#pablo"
+                                  onClick={(e) => e.preventDefault()}
+                                >
+                                  Privacy Policy
+                                </a>
+                              </span>
+                            </label>
+                          </div>
+                        </Col>
+                      </Row>
+                      <div className="text-center">
+                        <Button
+                          className="mt-4"
+                          color="primary"
+                          type="button"
+                        >
+                          Register
+                        </Button>
+                      </div>                      
                       </Form>
                     </CardBody>
                   </Card>
