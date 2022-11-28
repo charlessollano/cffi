@@ -99,7 +99,7 @@ function useArgonController() {
 
 // Typechecking props for the ArgonControllerProvider
 ArgonControllerProvider.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 // Context module functions

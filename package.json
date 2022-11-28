@@ -92,11 +92,12 @@
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
     "@types/reactstrap": "^8.7.2",
-    "eslint": "8.17.0",
+    "eslint": ">=5.16.0",
+    "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-react": "7.30.0",
+    "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "4.5.0",
     "prettier": "2.6.2",
     "sequelize-cli": "^6.5.2"
