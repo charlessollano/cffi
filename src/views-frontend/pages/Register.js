@@ -252,7 +252,7 @@ function Register() {
                                     <i className="ni ni-badge" />
                                   </InputGroupText>
                                 </InputGroupAddon>
-                                <Input id="occupation" placeholder="Title" type="text" />
+                                <Input id="occupation" placeholder="Job Title" type="text" />
                               </InputGroup>
                             </FormGroup>
                           </Col>
