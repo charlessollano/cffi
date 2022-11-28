@@ -27,12 +27,12 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // Argon Dashboard 2 MUI example components
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import Footer from "examples/Footer";
-import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
-import ProfilesList from "examples/Lists/ProfilesList";
-import DefaultProjectCard from "examples/Cards/ProjectCards/DefaultProjectCard";
-import PlaceholderCard from "examples/Cards/PlaceholderCard";
+import DashboardLayout from "views-admin/LayoutContainers/DashboardLayout";
+import Footer from "views-admin/Footer";
+import ProfileInfoCard from "views-admin/Cards/InfoCards/ProfileInfoCard";
+import ProfilesList from "views-admin/Lists/ProfilesList";
+import DefaultProjectCard from "views-admin/Cards/ProjectCards/DefaultProjectCard";
+import PlaceholderCard from "views-admin/Cards/PlaceholderCard";
 
 // Overview page components
 import Header from "layouts/profile/components/Header";
