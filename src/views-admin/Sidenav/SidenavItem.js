@@ -26,7 +26,7 @@ import Icon from "@mui/material/Icon";
 import ArgonBox from "components/ArgonBox";
 
 // Custom styles for the sidenavItem
-import { item, itemIcon, itemText, itemIconBox } from "examples/Sidenav/styles/sidenavItem";
+import { item, itemIcon, itemText, itemIconBox } from "views-admin/Sidenav/styles/sidenavItem";
 
 // Argon Dashboard 2 MUI context
 import { useArgonController } from "context";

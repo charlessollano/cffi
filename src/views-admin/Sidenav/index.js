@@ -32,12 +32,12 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // Argon Dashboard 2 MUI example components
-import SidenavItem from "examples/Sidenav/SidenavItem";
-import SidenavFooter from "examples/Sidenav/SidenavFooter";
+import SidenavItem from "views-admin/Sidenav/SidenavItem";
+import SidenavFooter from "views-admin/Sidenav/SidenavFooter";
 
 // Custom styles for the Sidenav
-import SidenavRoot from "examples/Sidenav/SidenavRoot";
-import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
+import SidenavRoot from "views-admin/Sidenav/SidenavRoot";
+import sidenavLogoLabel from "views-admin/Sidenav/styles/sidenav";
 
 // Argon Dashboard 2 MUI context
 import { useArgonController, setMiniSidenav } from "context";

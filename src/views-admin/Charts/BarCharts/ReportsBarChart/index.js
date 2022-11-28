@@ -30,10 +30,10 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // Argon Dashboard 2 MUI example components
-import BarReportsChartItem from "examples/Charts/BarCharts/ReportsBarChart/ReportsBarChartItem";
+import BarReportsChartItem from "views-admin/Charts/BarCharts/ReportsBarChart/ReportsBarChartItem";
 
 // ReportsBarChart configurations
-import configs from "examples/Charts/BarCharts/ReportsBarChart/configs";
+import configs from "views-admin/Charts/BarCharts/ReportsBarChart/configs";
 
 function ReportsBarChart({ color, title, description, chart, items }) {
   const { data, options } = configs(chart.labels || [], chart.datasets || {});

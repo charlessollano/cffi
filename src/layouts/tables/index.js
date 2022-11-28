@@ -21,10 +21,10 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // Argon Dashboard 2 MUI examples
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
-import Table from "examples/Tables/Table";
+import DashboardLayout from "views-admin/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "views-admin/Navbars/DashboardNavbar";
+import Footer from "views-admin/Footer";
+import Table from "views-admin/Tables/Table";
 
 // Data
 import authorsTableData from "layouts/tables/data/authorsTableData";

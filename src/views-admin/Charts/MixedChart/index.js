@@ -32,7 +32,7 @@ import ArgonTypography from "components/ArgonTypography";
 import gradientChartLine from "assets/theme/functions/gradientChartLine";
 
 // MixedChart configurations
-import configs from "examples/Charts/MixedChart/configs";
+import configs from "views-admin/Charts/MixedChart/configs";
 
 // Argon Dashboard 2 MUI base styles
 import colors from "assets/theme/base/colors";

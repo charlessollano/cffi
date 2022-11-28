@@ -29,7 +29,7 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // BubbleChart configurations
-import configs from "examples/Charts/BubbleChart/configs";
+import configs from "views-admin/Charts/BubbleChart/configs";
 
 // Argon Dashboard 2 MUI base styles
 import colors from "assets/theme/base/colors";

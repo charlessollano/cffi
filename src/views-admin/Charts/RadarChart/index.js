@@ -29,7 +29,7 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // RadarChart configurations
-import configs from "examples/Charts/RadarChart/configs";
+import configs from "views-admin/Charts/RadarChart/configs";
 
 // Argon Dashboard 2 MUI base styles
 import colors from "assets/theme/base/colors";

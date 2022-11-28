@@ -29,7 +29,7 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // PieChart configurations
-import configs from "examples/Charts/PieChart/configs";
+import configs from "views-admin/Charts/PieChart/configs";
 
 function PieChart({ title, description, height, chart }) {
   const { data, options } = configs(chart.labels || [], chart.datasets || {});

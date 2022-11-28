@@ -34,8 +34,8 @@ import ArgonTypography from "components/ArgonTypography";
 import ArgonInput from "components/ArgonInput";
 
 // Argon Dashboard 2 MUI example components
-import Breadcrumbs from "examples/Breadcrumbs";
-import NotificationItem from "examples/Items/NotificationItem";
+import Breadcrumbs from "views-admin/Breadcrumbs";
+import NotificationItem from "views-admin/Items/NotificationItem";
 
 // Custom styles for DashboardNavbar
 import {
@@ -45,7 +45,7 @@ import {
   navbarIconButton,
   navbarDesktopMenu,
   navbarMobileMenu,
-} from "examples/Navbars/DashboardNavbar/styles";
+} from "views-admin/Navbars/DashboardNavbar/styles";
 
 // Argon Dashboard 2 MUI context
 import {

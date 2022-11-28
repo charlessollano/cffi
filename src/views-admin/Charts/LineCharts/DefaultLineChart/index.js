@@ -29,7 +29,7 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // DefaultLineChart configurations
-import configs from "examples/Charts/LineCharts/DefaultLineChart/configs";
+import configs from "views-admin/Charts/LineCharts/DefaultLineChart/configs";
 
 // Argon Dashboard 2 MUI base styles
 import colors from "assets/theme/base/colors";

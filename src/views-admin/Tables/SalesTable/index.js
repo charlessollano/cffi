@@ -30,7 +30,7 @@ import ArgonTypography from "components/ArgonTypography";
 import ArgonBox from "components/ArgonBox";
 
 // Argon Dashboard 2 MUI example components
-import SalesTableCell from "examples/Tables/SalesTable/SalesTableCell";
+import SalesTableCell from "views-admin/Tables/SalesTable/SalesTableCell";
 
 function SalesTable({ title, rows }) {
   const renderTableCells = rows.map((row, key) => {

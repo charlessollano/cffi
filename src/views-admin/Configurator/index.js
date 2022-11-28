@@ -33,7 +33,7 @@ import ArgonTypography from "components/ArgonTypography";
 import ArgonButton from "components/ArgonButton";
 
 // Custom styles for the Configurator
-import ConfiguratorRoot from "examples/Configurator/ConfiguratorRoot";
+import ConfiguratorRoot from "views-admin/Configurator/ConfiguratorRoot";
 
 // Argon Dashboard 2 MUI context
 import {

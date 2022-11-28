@@ -32,8 +32,8 @@ import ArgonTypography from "components/ArgonTypography";
 import ArgonButton from "components/ArgonButton";
 
 // Argon Dashboard 2 MUI examples components
-import DefaultNavbarLink from "examples/Navbars/DefaultNavbar/DefaultNavbarLink";
-import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMobile";
+import DefaultNavbarLink from "views-admin/Navbars/DefaultNavbar/DefaultNavbarLink";
+import DefaultNavbarMobile from "views-admin/Navbars/DefaultNavbar/DefaultNavbarMobile";
 
 // Argon Dashboard 2 MUI Base Styles
 import breakpoints from "assets/theme/base/breakpoints";

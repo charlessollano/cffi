@@ -29,7 +29,7 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // HorizontalBarChart configurations
-import configs from "examples/Charts/BarCharts/HorizontalBarChart/configs";
+import configs from "views-admin/Charts/BarCharts/HorizontalBarChart/configs";
 
 // Argon Dashboard 2 MUI base styles
 import colors from "assets/theme/base/colors";

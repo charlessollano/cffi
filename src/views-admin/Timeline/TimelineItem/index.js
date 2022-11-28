@@ -25,10 +25,10 @@ import ArgonTypography from "components/ArgonTypography";
 import ArgonBadge from "components/ArgonBadge";
 
 // Timeline context
-import { useTimeline } from "examples/Timeline/context";
+import { useTimeline } from "views-admin/Timeline/context";
 
 // Custom styles for the TimelineItem
-import { timelineItem, timelineItemIcon } from "examples/Timeline/TimelineItem/styles";
+import { timelineItem, timelineItemIcon } from "views-admin/Timeline/TimelineItem/styles";
 
 function TimelineItem({ color, icon, title, dateTime, description, badges, lastItem }) {
   const isDark = useTimeline();

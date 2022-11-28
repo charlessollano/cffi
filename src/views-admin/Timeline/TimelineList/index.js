@@ -24,7 +24,7 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // Timeline context
-import { TimelineProvider } from "examples/Timeline/context";
+import { TimelineProvider } from "views-admin/Timeline/context";
 
 function TimelineList({ title, dark, children }) {
   return (

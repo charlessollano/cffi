@@ -25,10 +25,10 @@ import PropTypes from "prop-types";
 import ArgonBox from "components/ArgonBox";
 
 // Argon Dashboard 2 MUI example components
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
-import Sidenav from "examples/Sidenav";
+import DashboardLayout from "views-admin/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "views-admin/Navbars/DashboardNavbar";
+import Footer from "views-admin/Footer";
+import Sidenav from "views-admin/Sidenav";
 
 // Argon Dashboard 2 MUI context
 import { useArgonController, setMiniSidenav, setLayout, setDarkSidenav } from "context";

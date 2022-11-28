@@ -31,7 +31,7 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // Argon Dashboard 2 MUI exampless
-import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
+import DefaultNavbarDropdown from "views-admin/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 
 // Argon Dashboard 2 PRO React contexts
 import { useArgonController } from "context";

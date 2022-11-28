@@ -23,13 +23,13 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // Argon Dashboard 2 MUI examples
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
-import DetailedStatisticsCard from "examples/Cards/StatisticsCards/DetailedStatisticsCard";
-import SalesTable from "examples/Tables/SalesTable";
-import CategoriesList from "examples/Lists/CategoriesList";
-import GradientLineChart from "examples/Charts/LineCharts/GradientLineChart";
+import DashboardLayout from "views-admin/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "views-admin/Navbars/DashboardNavbar";
+import Footer from "views-admin/Footer";
+import DetailedStatisticsCard from "views-admin/Cards/StatisticsCards/DetailedStatisticsCard";
+import SalesTable from "views-admin/Tables/SalesTable";
+import CategoriesList from "views-admin/Lists/CategoriesList";
+import GradientLineChart from "views-admin/Charts/LineCharts/GradientLineChart";
 
 // Argon Dashboard 2 MUI base styles
 import typography from "assets/theme/base/typography";

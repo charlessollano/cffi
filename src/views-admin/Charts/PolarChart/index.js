@@ -29,7 +29,7 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // PolarChart configurations
-import configs from "examples/Charts/PolarChart/configs";
+import configs from "views-admin/Charts/PolarChart/configs";
 
 function PolarChart({ title, description, chart }) {
   const { data, options } = configs(chart.labels || [], chart.datasets || {});
