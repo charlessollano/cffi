@@ -27,8 +27,8 @@ import Icon from "@mui/material/Icon";
 import ArgonBox from "components/ArgonBox";
 
 // Argon Dashboard 2 MUI example components
-import Sidenav from "examples/Sidenav";
-import Configurator from "examples/Configurator";
+import Sidenav from "views-admin/Sidenav";
+import Configurator from "views-admin/Configurator";
 
 // Argon Dashboard 2 MUI themes
 import theme from "assets/theme";
@@ -54,8 +54,8 @@ import brandDark from "assets/images/logo-ct-dark.png";
 // Icon Fonts
 import "assets/css/nucleo-icons.css";
 import "assets/css/nucleo-svg.css";
-import Landing from "views-frontend/examples/Landing";
-import Register from "views-frontend/examples/Register";
+import Landing from "views-frontend/pages/Landing";
+import Register from "views-frontend/pages/Register";
 
 export default function App() {
   const [controller, dispatch] = useArgonController();

@@ -45,7 +45,7 @@ import SignUp from "layouts/authentication/sign-up";
 
 // Argon Dashboard 2 MUI components
 import ArgonBox from "components/ArgonBox";
-import Landing from "views-frontend/examples/Landing";
+import Landing from "views-frontend/pages/Landing";
 
 const routes = [
   {

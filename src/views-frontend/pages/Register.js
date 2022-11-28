@@ -252,7 +252,7 @@ class Register extends React.Component {
                                   <i className="ni ni-badge" />
                                 </InputGroupText>
                               </InputGroupAddon>
-                              <Input placeholder="Position" type="text" />
+                              <Input placeholder="Occupation" type="text" />
                             </InputGroup>
                           </FormGroup>
                         </Col>
