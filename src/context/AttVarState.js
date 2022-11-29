@@ -50,6 +50,24 @@ const AttVarReducer = (state, action) => {
         regions: [...state.regions, action.payload]
       };
     }
+    case "ADD_PROVINCE":{
+      return {
+        ...state,
+        provinces: [...state.provinces, action.payload]
+      };
+    }
+    case "ADD_CITYMUNI":{
+      return {
+        ...state,
+        citymunis: [...state.citymunis, action.payload]
+      };
+    }
+    case "ADD_BRGY":{
+      return {
+        ...state,
+        barangays: [...state.barangays, action.payload]
+      };
+    }
     case "EDIT_GENDER":{
       const updatedGender = action.payload;
       const genders = state.genders.map(gender => {
@@ -89,6 +107,58 @@ const AttVarReducer = (state, action) => {
         positions
       };
     }
+    case "EDIT_REGION":{
+      const updatedRegion = action.payload;
+      const regions = state.regions.map(region => {
+        if (region.id === updatedRegion.id) {
+          return updatedRegion;
+        }
+        return region;
+      });
+      return {
+        ...state,
+        regions
+      };
+    }
+    case "EDIT_PROVINCE":{
+      const updatedProvince = action.payload;
+      const provinces = state.provinces.map(province => {
+        if (province.id === updatedProvince.id) {
+          return updatedProvince;
+        }
+        return province;
+      });
+      return {
+        ...state,
+        provinces
+      };
+    }
+    case "EDIT_CITYMUNI":{
+      const updatedCityMuni = action.payload;
+      const citymunis = state.citymunis.map(citymuni => {
+        if (citymuni.id === updatedCityMuni.id) {
+          return updatedCityMuni;
+        }
+        return citymuni;
+      });
+      return {
+        ...state,
+        citymunis
+      };
+    }
+    case "EDIT_BRGY":{
+      const updatedBrgy = action.payload;
+      const barangays = state.barangays.map(barangay => {
+        if (barangay.id === updatedBrgy.id) {
+          return updatedBrgy;
+        }
+        return barangay;
+      });
+      return {
+        ...state,
+        barangays
+      };
+    }
     case "DELETE_GENDER":{
       const genderDel = state.genders.filter(
         gender => gender.id !== action.payload
@@ -117,6 +187,46 @@ const AttVarReducer = (state, action) => {
       return {
         ...state,
         positionDel
+      };
+    }
+    case "DELETE_REGION":{
+      const regionDel = state.regions.filter(
+        region => region.id !== action.payload
+      );
+
+      return {
+        ...state,
+        regionDel
+      };
+    }
+    case "DELETE_PROVINCE":{
+      const provinceDel = state.provinces.filter(
+        province => province.id !== action.payload
+      );
+
+      return {
+        ...state,
+        provinceDel
+      };
+    }
+    case "DELETE_CITYMUNI":{
+      const citymuniDel = state.citymunis.filter(
+        citymuni => citymuni.id !== action.payload
+      );
+
+      return {
+        ...state,
+        citymuniDel
+      };
+    }
+    case "DELETE_BRGY":{
+      const barangayDel = state.barangays.filter(
+        barangay => barangay.id !== action.payload
+      );
+
+      return {
+        ...state,
+        barangayDel
       };
     }
     default:{
