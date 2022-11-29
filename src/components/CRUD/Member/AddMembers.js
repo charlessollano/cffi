@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { MemberContext } from "../../../context/MemberState";
+import { MemberContext } from "../../../context/GlobalState";
 import DemoNavbar from "components/Navbars/DemoNavbar";
 import ReactDatetime from "react-datetime";
 import {
