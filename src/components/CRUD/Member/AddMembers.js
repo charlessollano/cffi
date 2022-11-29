@@ -63,7 +63,7 @@ const AddMembers = () => {
       province,
       citymuni,
       barangay,
-      beneficiary
+      beneficiary,
     };
     if (!editMode) {
       dispatch({

@@ -12,23 +12,23 @@ const AddEmployees = () => {
   const [editMode, setEditMode] = useState(false);
 
   const { state, dispatch } = useContext(GlobalContext);
-  const formSubmit = e => {
+  const formSubmit = (e) => {
     e.preventDefault();
     const newEmployee = {
       id: !editMode ? Date.now() : empId,
       name,
       location,
-      designation
+      designation,
     };
     if (!editMode) {
       dispatch({
         type: "ADD_EMPLOYEE",
-        payload: newEmployee
+        payload: newEmployee,
       });
     } else {
       dispatch({
         type: "EDIT_EMPLOYEE",
-        payload: newEmployee
+        payload: newEmployee,
       });
     }
     setName("");
@@ -43,18 +43,18 @@ const AddEmployees = () => {
     setDesignation("");
     setEditMode(false);
   };
-  const editEmployee = employee => {
+  const editEmployee = (employee) => {
     setEmpId(employee.id);
     setName(employee.name);
     setLocation(employee.location);
     setDesignation(employee.designation);
     setEditMode(true);
   };
-  const deleteEmp = id => {
+  const deleteEmp = (id) => {
     dispatch({
       type: "DELETE_EMPLOYEE",
-      payload: id
-    })
+      payload: id,
+    });
   };
   return (
     <React.Fragment>
@@ -72,7 +72,7 @@ const AddEmployees = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:text-gray-600"
               type="text"
               placeholder="Enter your name"
-              onChange={e => setName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
               value={name}
             />
           </div>
@@ -87,7 +87,7 @@ const AddEmployees = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:text-gray-600"
               type="text"
               placeholder="Enter your location"
-              onChange={e => setLocation(e.target.value)}
+              onChange={(e) => setLocation(e.target.value)}
               value={location}
             />
           </div>
@@ -102,7 +102,7 @@ const AddEmployees = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:text-gray-600"
               type="text"
               placeholder="Enter your designation"
-              onChange={e => setDesignation(e.target.value)}
+              onChange={(e) => setDesignation(e.target.value)}
               value={designation}
             />
           </div>{" "}
@@ -119,18 +119,14 @@ const AddEmployees = () => {
         </form>
       </div>
       <div className="w-full max-w-sm container mt-10 mx-auto">
-        {state.employees.map(employee => {
+        {state.employees.map((employee) => {
           return (
             <div class="flex" key={employee.id}>
-              <div class="w-1/5 bg-gray-500 p-4 text-center text-gray-200">
-                {employee.name}
-              </div>
+              <div class="w-1/5 bg-gray-500 p-4 text-center text-gray-200">{employee.name}</div>
               <div class="w-1/5 bg-gray-400 p-4 text-center text-gray-700">
                 {employee.designation}
               </div>
-              <div class="w-1/5 bg-gray-500 p-4 text-center text-gray-700">
-                {employee.location}
-              </div>
+              <div class="w-1/5 bg-gray-500 p-4 text-center text-gray-700">{employee.location}</div>
               <div class="w-1/5 bg-gray-400 p-4 text-center text-gray-700">
                 <button
                   class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
