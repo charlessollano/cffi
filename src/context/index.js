@@ -20,6 +20,47 @@ Coded by www.creative-tim.com
 
 import { createContext, useContext, useReducer, useMemo } from "react";
 
+import {
+  BarangayReducer,
+  BarangayContext,
+  initialState as BarangayInitState,
+} from "./BarangayState";
+import {
+  CityMuniReducer,
+  CityMuniContext,
+  initialState as CityMuniInitState,
+} from "./CityMuniState";
+import {
+  GenderReducer,
+  GenderContext,
+  initialState as GenderInitState,
+} from "./GenderState";
+import {
+  PositionReducer,
+  PositionContext,
+  initialState as PositionInitState,
+} from "./PositionState";
+import {
+  ProvinceReducer,
+  ProvinceContext,
+  initialState as ProvinceInitState,
+} from "./ProvinceState";
+import {
+  RankReducer,
+  RankContext,
+  initialState as RankInitState,
+} from "./RankState";
+import {
+  RegionReducer,
+  RegionContext,
+  initialState as RegionInitState,
+} from "./RegionState";
+import {
+  MemberReducer,
+  MemberContext,
+  initialState as MemberInitState,
+} from "./MemberState";
+
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -91,7 +132,9 @@ function useArgonController() {
   const context = useContext(Argon);
 
   if (!context) {
-    throw new Error("useArgonController should be used inside the ArgonControllerProvider.");
+    throw new Error(
+      "useArgonController should be used inside the ArgonControllerProvider."
+    );
   }
 
   return context;
@@ -99,17 +142,24 @@ function useArgonController() {
 
 // Typechecking props for the ArgonControllerProvider
 ArgonControllerProvider.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 // Context module functions
-const setMiniSidenav = (dispatch, value) => dispatch({ type: "MINI_SIDENAV", value });
-const setDarkSidenav = (dispatch, value) => dispatch({ type: "DARK_SIDENAV", value });
-const setSidenavColor = (dispatch, value) => dispatch({ type: "SIDENAV_COLOR", value });
-const setTransparentNavbar = (dispatch, value) => dispatch({ type: "TRANSPARENT_NAVBAR", value });
-const setFixedNavbar = (dispatch, value) => dispatch({ type: "FIXED_NAVBAR", value });
-const setOpenConfigurator = (dispatch, value) => dispatch({ type: "OPEN_CONFIGURATOR", value });
-const setDirection = (dispatch, value) => dispatch({ type: "DIRECTION", value });
+const setMiniSidenav = (dispatch, value) =>
+  dispatch({ type: "MINI_SIDENAV", value });
+const setDarkSidenav = (dispatch, value) =>
+  dispatch({ type: "DARK_SIDENAV", value });
+const setSidenavColor = (dispatch, value) =>
+  dispatch({ type: "SIDENAV_COLOR", value });
+const setTransparentNavbar = (dispatch, value) =>
+  dispatch({ type: "TRANSPARENT_NAVBAR", value });
+const setFixedNavbar = (dispatch, value) =>
+  dispatch({ type: "FIXED_NAVBAR", value });
+const setOpenConfigurator = (dispatch, value) =>
+  dispatch({ type: "OPEN_CONFIGURATOR", value });
+const setDirection = (dispatch, value) =>
+  dispatch({ type: "DIRECTION", value });
 const setLayout = (dispatch, value) => dispatch({ type: "LAYOUT", value });
 const setDarkMode = (dispatch, value) => dispatch({ type: "DARK_MODE", value });
 
@@ -125,4 +175,46 @@ export {
   setDirection,
   setLayout,
   setDarkMode,
+};
+
+export const GlobalReducer = {
+  BarangayReducer,
+  CityMuniReducer,
+  GenderReducer,
+  MemberReducer,
+  PositionReducer,
+  ProvinceReducer,
+  RankReducer,
+  RegionReducer,
+};
+
+export const GlobalContext = createContext({
+  BarangayContext,
+  CityMuniContext,
+  GenderContext,
+  MemberContext,
+  PositionContext,
+  ProvinceContext,
+  RankContext,
+  RegionContext,
+});
+
+const GlobalInitialState = {
+  barangays: BarangayInitState.barangays,
+  citymunis: CityMuniInitState.citymunis,
+  genders: GenderInitState.genders,
+  members: MemberInitState.members,
+  positions: PositionInitState.positions,
+  provinces: ProvinceInitState.provinces,
+  ranks: RankInitState.ranks,
+  regions: RegionInitState.regions
+};
+
+export const GlobalProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(GlobalReducer, GlobalInitialState);
+  return (
+    <GlobalContext.Provider value={{ state, dispatch }}>
+      {children}
+    </GlobalContext.Provider>
+  );
 };

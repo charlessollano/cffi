@@ -1,10 +1,10 @@
 import React, { createContext, useReducer } from "react";
 
-const initialState = {
+export const initialState = {
   provinces: [{ id: 1, name: "", regCode: 0, provCode: 0, status: "Pending" }],
 };
 
-const ProvinceReducer = (state, action) => {
+export const ProvinceReducer = (state, action) => {
   switch (action.type) {
     case "ADD_PROVINCE": {
       return {

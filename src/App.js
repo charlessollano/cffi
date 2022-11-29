@@ -46,7 +46,7 @@ import routes from "routes";
 
 // Argon Dashboard 2 MUI contexts
 import { useArgonController, setMiniSidenav, setOpenConfigurator } from "context";
-import { MemberProvider } from "./context/MemberState";
+import { GlobalProvider } from "./context";
 // Images
 import brand from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
@@ -150,7 +150,7 @@ export default function App() {
   ) : direction === "rtl" ? (
     <CacheProvider value={rtlCache}>
       <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
-        <MemberProvider>
+        <GlobalProvider>
           <CssBaseline />
           {layout === "dashboard" && (
             <>
@@ -171,12 +171,12 @@ export default function App() {
             {getRoutes(routes)}
             <Route path="*" element={<Navigate to="/dashboard" />} />
           </Routes>
-        </MemberProvider>
+        </GlobalProvider>
       </ThemeProvider>
     </CacheProvider>
   ) : (
     <ThemeProvider theme={darkMode ? themeDark : theme}>
-      <MemberProvider>
+      <GlobalProvider>
         <CssBaseline />
         {layout === "dashboard" && (
           <>
@@ -197,7 +197,7 @@ export default function App() {
           {getRoutes(routes)}
           <Route path="*" element={<Navigate to="/dashboard" />} />
         </Routes>
-      </MemberProvider>
+      </GlobalProvider>
     </ThemeProvider>
   );
 }

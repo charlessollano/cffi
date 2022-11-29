@@ -1,10 +1,10 @@
 import React, { createContext, useReducer } from "react";
 
-const initialState = {
+export const initialState = {
   positions: [{ id: 1, name: "", status: "Pending" }],
 };
 
-const PositionReducer = (state, action) => {
+export const PositionReducer = (state, action) => {
   switch (action.type) {
     case "ADD_POSITION": {
       return {

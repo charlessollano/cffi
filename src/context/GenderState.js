@@ -1,10 +1,10 @@
 import React, { createContext, useReducer } from "react";
 
-const initialState = {
+export const initialState = {
   genders: [{ id: 1, name: "", status: "Pending" }],
 };
 
-const GenderReducer = (state, action) => {
+export const GenderReducer = (state, action) => {
   switch (action.type) {
     case "ADD_GENDER": {
       return {

@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from "react";
 
-const initialState = {
+export const initialState = {
   members: [
     {
       id: 1,
@@ -18,7 +18,7 @@ const initialState = {
   ],
 };
 
-const MemberReducer = (state, action) => {
+export const MemberReducer = (state, action) => {
   switch (action.type) {
     case "ADD_MEMBER": {
       return {

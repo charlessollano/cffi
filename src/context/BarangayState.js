@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from "react";
 
-const initialState = {
+export const initialState = {
   barangays: [
     {
       id: 1,
@@ -14,7 +14,7 @@ const initialState = {
   ],
 };
 
-const BarangayReducer = (state, action) => {
+export const BarangayReducer = (state, action) => {
   switch (action.type) {
     case "ADD_BRGY": {
       return {

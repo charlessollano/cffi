@@ -46,8 +46,7 @@ import SignUp from "layouts/authentication/sign-up";
 // Argon Dashboard 2 MUI components
 import ArgonBox from "components/ArgonBox";
 import Landing from "views-frontend/pages/Landing";
-import AddMembers from "components/CRUD/Member/AddMembers";
-import EditMembers from "components/CRUD/Member/EditMembers";
+import {SaveMember, MemberList} from "components/CRUD/Member";
 
 const routes = [
   {
@@ -129,22 +128,31 @@ const routes = [
   },
   {
     type: "route",
-    name: "AddMembers",
-    key: "addMembers",
-    route: "/member/add",
+    name: "SaveMember",
+    key: "registerMember",
+    route: "/member/save",
     icon: <ArgonBox component="i" color="primary" fontSize="14px" className="ni ni-tv-2" />,
-    component: <AddMembers />,
+    component: <SaveMember />,
     exact: true
   },
   {
     type: "route",
-    name: "EditMembers",
-    key: "editMembers",
-    route: "/member/edit:id",
+    name: "MemberList",
+    key: "memberlist",
+    route: "/member/list",
     icon: <ArgonBox component="i" color="primary" fontSize="14px" className="ni ni-tv-2" />,
-    component: <EditMembers />,
+    component: <MemberList />,
     exact: true
   },
+  // {
+  //   type: "route",
+  //   name: "MemberList",
+  //   key: "memberlist",
+  //   route: "/member/edit:id",
+  //   icon: <ArgonBox component="i" color="primary" fontSize="14px" className="ni ni-tv-2" />,
+  //   component: <MemberList />,
+  //   exact: true
+  // },
 ];
 
 export default routes;

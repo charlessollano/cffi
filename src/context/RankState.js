@@ -1,10 +1,10 @@
 import React, { createContext, useReducer } from "react";
 
-const initialState = {
+export const initialState = {
   ranks: [{ id: 1, name: "", status: "Pending" }],
 };
 
-const RankReducer = (state, action) => {
+export const RankReducer = (state, action) => {
   switch (action.type) {
     case "ADD_RANK": {
       return {

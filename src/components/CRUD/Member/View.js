@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { MemberContext } from "../../../context/MemberState";
+import { GlobalContext } from "../../../context";
 import DemoNavbar from "components/Navbars/DemoNavbar";
 import ReactDatetime from "react-datetime";
 import {
@@ -41,7 +41,7 @@ const AddMembers = () => {
   const [barangay, setBarangay] = useState(0);
   const [beneficiary, setBeneficiary] = useState("");
 
-  const { state, dispatch } = useContext(MemberContext);
+  const { state, dispatch } = useContext(GlobalContext);
 
   const formSubmit = (e) => {
     e.preventDefault();
