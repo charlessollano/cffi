@@ -1,7 +1,4 @@
 import React, { createContext, useReducer } from "react";
-import { AttVarContext } from "AttVarState";
-
-const { state: attVarState, dispatch: attVarDispatch } = useContext(AttVarContext);
 
 const initialState = {
   members: [
@@ -19,7 +16,6 @@ const initialState = {
       status: "Pending",
     },
   ],
-  ...attVarState,
 };
 
 const MemberReducer = (state, action) => {

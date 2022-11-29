@@ -46,7 +46,7 @@ import routes from "routes";
 
 // Argon Dashboard 2 MUI contexts
 import { useArgonController, setMiniSidenav, setOpenConfigurator } from "context";
-import { MemberProvider } from "./context/GlobalState";
+import { MemberProvider } from "./context/MemberState";
 // Images
 import brand from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
