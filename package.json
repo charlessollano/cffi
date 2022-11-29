@@ -16,8 +16,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install --omit=optional --verbose && npm start",
-    "install:peer-deps": "npm install --omit=optional --legacy-peer-deps --verbose",
+    "lint": "npx eslint --fix",
+    "lint:css": "stylelint --ignore-path .gitignore './src/*.{css,js}'",
+    "stylelint-check": "stylelint-config-prettier-check",
+    "install:clean": "rm -rf node_modules/ && rm -rf yarn.lock && yarn install && yarn run start",
     "compile-sass": "sass src/assets/scss/argon-design-system-react.scss src/assets/css/argon-design-system-react.css",
     "minify-sass": "sass src/assets/scss/argon-design-system-react.scss src/assets/css/argon-design-system-react.min.css --style compressed"
   },
@@ -90,6 +92,7 @@
     "web-vitals": "2.1.4"
   },
   "devDependencies": {
+    "@stylelint/postcss-css-in-js": "^0.38.0",
     "@svgr/webpack": "^6.5.1",
     "@types/reactstrap": "^8.7.2",
     "eslint": ">=5.16.0",
@@ -99,8 +102,13 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "4.5.0",
+    "postcss-syntax": "^0.36.2",
     "prettier": "2.6.2",
-    "sequelize-cli": "^6.5.2"
+    "sequelize-cli": "^6.5.2",
+    "stylelint": "^14.15.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-styled-components": "^0.1.1"
   },
   "overrides": {
     "@svgr/webpack": "$@svgr/webpack"

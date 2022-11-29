@@ -3,8 +3,7 @@ import React, { createContext, useReducer } from "react";
 const initialState = {
   members: [
     { id: 1, firstName: "Vasu", middleName: "Vasu", lastName: "Vasu", fullAddress: "Bangalore", 
-      position: "Sr Manager", rank: "1", occupation: "", contactNum: "", email: "",
-
+      position: "Sr Manager", rank: "1", occupation: "", contactNum: "", email: "", status: "Pending"
     }
   ]
 };
