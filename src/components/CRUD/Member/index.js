@@ -1,4 +1,4 @@
-import SaveMember from "./View";
+import SaveMember from "./Save";
 import MemberList from "./List";
 
 export {
