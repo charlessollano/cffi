@@ -46,7 +46,7 @@ import routes from "routes";
 
 // Argon Dashboard 2 MUI contexts
 import { useArgonController, setMiniSidenav, setOpenConfigurator } from "context";
-import { MemberProvider } from "./context/MemberState";
+import { GlobalProvider } from "./context";
 // Images
 import brand from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
@@ -64,7 +64,7 @@ export default function App() {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const [rtlCache, setRtlCache] = useState(null);
   const { pathname } = useLocation();
-  
+
   // Cache for the rtl
   useMemo(() => {
     const cacheRtl = createCache({
@@ -96,7 +96,7 @@ export default function App() {
 
   // Setting the dir attribute for the body element
   useEffect(() => {
-    if(pathname === "/landing" || pathname === "/") return;
+    if (pathname === "/landing" || pathname === "/") return;
     document.body.setAttribute("dir", direction);
   }, [direction]);
 
@@ -142,64 +142,62 @@ export default function App() {
       </Icon>
     </ArgonBox>
   );
-  
-  return pathname === "/landing" ? <Landing />
-  : (
-    pathname === "/register-page" || pathname === "/" ? <Register />
-    : (  
-      direction === "rtl" ? (
-        <CacheProvider value={rtlCache}>
-          <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
-            <MemberProvider>
-              <CssBaseline />
-              {layout === "dashboard" && (
-                <>
-                  <Sidenav
-                    color={sidenavColor}
-                    brand={darkSidenav || darkMode ? brand : brandDark}
-                    brandName="CFFI Admin Dashboard"
-                    routes={routes}
-                    onMouseEnter={handleOnMouseEnter}
-                    onMouseLeave={handleOnMouseLeave}
-                  />
-                  <Configurator />
-                  {configsButton}
-                </>
-              )}
-              {layout === "vr" && <Configurator />}
-              <Routes>
-                {getRoutes(routes)}
-                <Route path="*" element={<Navigate to="/dashboard" />} />
-              </Routes>
-            </MemberProvider>
-          </ThemeProvider>
-        </CacheProvider>
-      ) : (
-        <ThemeProvider theme={darkMode ? themeDark : theme}>
-          <MemberProvider>
-            <CssBaseline />
-            {layout === "dashboard" && (
-              <>
-                <Sidenav
-                  color={sidenavColor}
-                  brand={darkSidenav || darkMode ? brand : brandDark}
-                  brandName="CFFI Admin Dashboard"
-                  routes={routes}
-                  onMouseEnter={handleOnMouseEnter}
-                  onMouseLeave={handleOnMouseLeave}
-                />
-                <Configurator />
-                {configsButton}
-              </>
-            )}
-            {layout === "vr" && <Configurator />}
-            <Routes>
-              {getRoutes(routes)}
-              <Route path="*" element={<Navigate to="/dashboard" />} />
-            </Routes>
-          </MemberProvider>
-        </ThemeProvider>
-      )
-    )
+
+  return pathname === "/landing" ? (
+    <Landing />
+  ) : pathname === "/register-page" || pathname === "/" ? (
+    <Register />
+  ) : direction === "rtl" ? (
+    <CacheProvider value={rtlCache}>
+      <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
+        <GlobalProvider>
+          <CssBaseline />
+          {layout === "dashboard" && (
+            <>
+              <Sidenav
+                color={sidenavColor}
+                brand={darkSidenav || darkMode ? brand : brandDark}
+                brandName="CFFI Admin Dashboard"
+                routes={routes}
+                onMouseEnter={handleOnMouseEnter}
+                onMouseLeave={handleOnMouseLeave}
+              />
+              <Configurator />
+              {configsButton}
+            </>
+          )}
+          {layout === "vr" && <Configurator />}
+          <Routes>
+            {getRoutes(routes)}
+            <Route path="*" element={<Navigate to="/dashboard" />} />
+          </Routes>
+        </GlobalProvider>
+      </ThemeProvider>
+    </CacheProvider>
+  ) : (
+    <ThemeProvider theme={darkMode ? themeDark : theme}>
+      <GlobalProvider>
+        <CssBaseline />
+        {layout === "dashboard" && (
+          <>
+            <Sidenav
+              color={sidenavColor}
+              brand={darkSidenav || darkMode ? brand : brandDark}
+              brandName="CFFI Admin Dashboard"
+              routes={routes}
+              onMouseEnter={handleOnMouseEnter}
+              onMouseLeave={handleOnMouseLeave}
+            />
+            <Configurator />
+            {configsButton}
+          </>
+        )}
+        {layout === "vr" && <Configurator />}
+        <Routes>
+          {getRoutes(routes)}
+          <Route path="*" element={<Navigate to="/dashboard" />} />
+        </Routes>
+      </GlobalProvider>
+    </ThemeProvider>
   );
 }
